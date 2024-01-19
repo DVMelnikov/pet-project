@@ -13,7 +13,7 @@ const (
 	envDev   = "dev"
 	envProd  = "prod"
 )
-
+123
 func main() {
 	cfg := configs.MustLoad()
 
@@ -23,13 +23,13 @@ func main() {
 
 	log.Info("initializing bot")
 	log.Debug("logger debug mode enabled")
-
+123
 	bot, err := tgbotapi.NewBotAPI(cfg.TelegramBot.Token)
 	if err != nil {
 		log.Error("failed to initialize telegram bot")
 	}
 }
-
+123
 func setupLogger(env string) *slog.Logger {
 	var log *slog.Logger
 
