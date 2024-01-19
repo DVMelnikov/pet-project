@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/DVMelnikov/pet-project/configs"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 const (
@@ -22,6 +23,11 @@ func main() {
 
 	log.Info("initializing bot")
 	log.Debug("logger debug mode enabled")
+
+	bot, err := tgbotapi.NewBotAPI(cfg.TelegramBot.Token)
+	if err != nil {
+		log.Error("failed to initialize telegram bot")
+	}
 }
 
 func setupLogger(env string) *slog.Logger {
